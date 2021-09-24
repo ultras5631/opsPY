@@ -25,7 +25,7 @@ jobs:
           
           
       - name: ls files
-        run: ls -la
+        run: ls -l
         
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
