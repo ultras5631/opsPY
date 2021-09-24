@@ -23,8 +23,7 @@ jobs:
       - uses: returntocorp/semgrep-action@v1
         with:
           config: >- # more at semgrep.dev/explore
-            p/security-audit
-            p/secrets
+            p/gitlab-bandit
             generateSarif: "1"
 
       - name: Upload SARIF file
