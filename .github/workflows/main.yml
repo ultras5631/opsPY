@@ -12,20 +12,16 @@ env:
   authheader: someheader
   
 jobs:
-  tests:
+  semgrep:
     runs-on: ubuntu-latest
-    env:
-      GO111MODULE: on
     steps:
       # Fetch project source
       - uses: actions/checkout@v2
-
       - uses: returntocorp/semgrep-action@v1
         with:
           config: >- # more at semgrep.dev/explore
             p/gitlab-bandit
-          generateSarif: "1"  
-
+          generateSarif: "1"
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
