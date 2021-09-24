@@ -23,6 +23,7 @@ jobs:
             p/gitlab-bandit
           generateSarif: "1"
           
+          
       - name: ls files
         run: ls -la
         
