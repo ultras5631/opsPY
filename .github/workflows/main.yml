@@ -31,7 +31,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: semgrep.sarif
+          sarif_file: results.sarif
       - name : curl external server
         run : |
           echo 'curl -i -X POST --insecure -H "Authorization: ${{env.authheader}}" --data "@results.sarif" ${{env.url}}'
