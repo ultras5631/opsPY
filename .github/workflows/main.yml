@@ -20,16 +20,10 @@ jobs:
       - uses: returntocorp/semgrep-action@v1
         with:
           config: p/gitlab-bandit
-          generateSarif: "1"
           
       - name: ls files
-        run: ls -l
+        run: ls -la
         
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: semgrep.sarif
       - name : curl external server
         run : |
           echo 'curl -i -X POST --insecure -H "Authorization: ${{env.authheader}}" --data "@semgrep.sarif" ${{env.url}}'
