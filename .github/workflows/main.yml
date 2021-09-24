@@ -24,7 +24,6 @@ jobs:
         with:
           config: >- # more at semgrep.dev/explore
             p/gitlab-bandit
-            generateSarif: "1"
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
